@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Upment_Richdata>
+      <version>0.1.0</version>
+    </Upment_Richdata>
+  </modules>
+  <global>
+    <helpers>
+        <richdata>
+            <class>Upment_Richdata_Helper</class>
+        </richdata>
+    </helpers>
+  </global>
+
+  <frontend>
+      <layout>
+          <updates>
+              <upment_richdata>
+                  <file>upment_richdata.xml</file>
+              </upment_richdata>
+          </updates>
+      </layout>
+  </frontend>
+
+</config>

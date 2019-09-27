@@ -1,0 +1,36 @@
+<?php
+/**
+ * @author Upment DOO
+ * @copyright Copyright (c) 2019 Upment (https://upment.com)
+ * @package Upment_Richdata
+ */
+
+$_helper = $this->helper('richdata');
+?>
+<script type="application/ld+json">
+{
+   "@context": "https://schema.org",
+   "@type": "Organization",
+   "url": "<?php echo $this->getUrl(); ?>",
+   "logo": "<?php echo $_helper->getLogoUrl(); ?>",
+   "name": "<?php echo $_helper->getOrgName(); ?>",
+   "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "<?php echo $_helper->getCustomerSupport(); ?>",
+      "contactType": "customer support"
+   }]<?php if ($_helper->haveSocialMedia()) { ?>,
+   "sameAs": [
+<?php
+  $medias = $_helper->getSocialMedia();
+  $i = 0;
+  foreach ($medias as $media) {
+    $i++;
+    if ($i > 1) echo ",\n";
+    echo "     \"" . $media . "\"";
+  }
+?>
+
+   ]<?php } ?>
+
+}
+</script>

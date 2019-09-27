@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <cms_index_index>
+      <block type="core/template" template="upment/organization.phtml" name="upmentrichdata.organization" />
+      <reference name="before_body_end">
+          <action ifconfig="rich_data/general/enable" method="append"><block>upmentrichdata.organization</block></action>
+      </reference>
+  </cms_index_index>
+</layout>
