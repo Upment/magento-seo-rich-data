@@ -14,14 +14,25 @@ $_helper = $this->helper('richdata');
    "url": "<?php echo $this->getUrl(); ?>",
    "logo": "<?php echo $_helper->getLogoUrl(); ?>",
    "name": "<?php echo $_helper->getOrgName(); ?>",
+   "description": "<?php echo $_helper->getDescription(); ?>",
+   "foundingDate": "<?php echo $_helper->getFoundingYear(); ?>",
+   "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "<?php echo $_helper->getStreetAddress(); ?>",
+     "addressLocality": "<?php echo $_helper->getTown(); ?>",
+     "addressRegion": "<?php echo $_helper->getRegion(); ?>",
+     "postalCode": "<?php echo $_helper->getPostalCode(); ?>",
+     "addressCountry": "<?php echo $_helper->getCountry(); ?>"
+   },
    "contactPoint": [{
       "@type": "ContactPoint",
       "telephone": "<?php echo $_helper->getCustomerSupport(); ?>",
+      "email": "<?php echo $_helper->getEmailAddress(); ?>",
       "contactType": "customer support"
-   }]<?php if ($_helper->haveSocialMedia()) { ?>,
+   }]<?php if ($_helper->haveAdditionalURLs()) { ?>,
    "sameAs": [
 <?php
-  $medias = $_helper->getSocialMedia();
+  $medias = $_helper->getAdditionalURLs();
   $i = 0;
   foreach ($medias as $media) {
     $i++;
