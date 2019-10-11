@@ -37,46 +37,134 @@ class Upment_Richdata_Helper_Data extends Mage_Core_Helper_Abstract
     }
 
     /**
-     * Check if there are social medias defined
+     * Get Organization Description
+     *
+     * @param string $store
+     * @return string
+     */
+    public function getDescription($store = null)
+    {
+      return Mage::getStoreConfig('rich_data/general/description', $store);
+    }
+
+    /**
+     * Get Organization Founding Year
+     *
+     * @param string $store
+     * @return string
+     */
+    public function getFoundingYear($store = null)
+    {
+      return Mage::getStoreConfig('rich_data/general/founded', $store);
+    }
+
+    /**
+     * Get Customer Support email address
+     *
+     * @param string $store
+     * @return string
+     */
+    public function getEmailAddress($store = null)
+    {
+      return Mage::getStoreConfig('rich_data/general/email', $store);
+    }
+
+    /**
+     * Get Street address
+     *
+     * @param string $store
+     * @return string
+     */
+    public function getStreetAddress($store = null)
+    {
+      return Mage::getStoreConfig('rich_data/address/street', $store);
+    }
+
+    /**
+     * Get Postal Code
+     *
+     * @param string $store
+     * @return string
+     */
+    public function getPostalCode($store = null)
+    {
+      return Mage::getStoreConfig('rich_data/address/postal', $store);
+    }
+
+    /**
+     * Get Town
+     *
+     * @param string $store
+     * @return string
+     */
+    public function getTown($store = null)
+    {
+      return Mage::getStoreConfig('rich_data/address/town', $store);
+    }
+
+    /**
+     * Get Region
+     *
+     * @param string $store
+     * @return string
+     */
+    public function getRegion($store = null)
+    {
+      return Mage::getStoreConfig('rich_data/address/region', $store);
+    }
+
+    /**
+     * Get Country
+     *
+     * @param string $store
+     * @return string
+     */
+    public function getCountry($store = null)
+    {
+      return Mage::getStoreConfig('rich_data/address/country', $store);
+    }
+
+    /**
+     * Check if there are additional URLs defined
      *
      * @param string $store
      * @return boolean
      */
-    public function haveSocialMedia($store = null)
+    public function haveAdditionalURLs($store = null)
     {
       return (
-        ( Mage::getStoreConfig('rich_data/social/facebook', $store) != '' ) ||
-        ( Mage::getStoreConfig('rich_data/social/twitter', $store) != '' ) ||
-        ( Mage::getStoreConfig('rich_data/social/google', $store) != '' ) ||
-        ( Mage::getStoreConfig('rich_data/social/instagram', $store) != '' ) ||
-        ( Mage::getStoreConfig('rich_data/social/youtube', $store) != '' ) ||
-        ( Mage::getStoreConfig('rich_data/social/linkedin', $store) != '' ) ||
-        ( Mage::getStoreConfig('rich_data/social/myspace', $store) != '' ) ||
-        ( Mage::getStoreConfig('rich_data/social/pinterest', $store) != '' ) ||
-        ( Mage::getStoreConfig('rich_data/social/soundcloud', $store) != '' ) ||
-        ( Mage::getStoreConfig('rich_data/social/tumblr', $store) != '' )
+        ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl1', $store) != '' ) ||
+        ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl2', $store) != '' ) ||
+        ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl3', $store) != '' ) ||
+        ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl4', $store) != '' ) ||
+        ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl5', $store) != '' ) ||
+        ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl6', $store) != '' ) ||
+        ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl7', $store) != '' ) ||
+        ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl8', $store) != '' ) ||
+        ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl9', $store) != '' ) ||
+        ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl10', $store) != '' )
       );
     }
 
     /**
-     * Get social media URLs
+     * Get additional URLs
      *
      * @param string $store
      * @return array
      */
-    public function getSocialMedia($store = null)
+    public function getAdditionalURLs($store = null)
     {
       $medias = array();
-      if ( Mage::getStoreConfig('rich_data/social/facebook', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/social/facebook', $store);
-      if ( Mage::getStoreConfig('rich_data/social/twitter', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/social/twitter', $store);
-      if ( Mage::getStoreConfig('rich_data/social/google', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/social/google', $store);
-      if ( Mage::getStoreConfig('rich_data/social/instagram', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/social/instagram', $store);
-      if ( Mage::getStoreConfig('rich_data/social/youtube', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/social/youtube', $store);
-      if ( Mage::getStoreConfig('rich_data/social/linkedin', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/social/linkedin', $store);
-      if ( Mage::getStoreConfig('rich_data/social/myspace', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/social/myspace', $store);
-      if ( Mage::getStoreConfig('rich_data/social/pinterest', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/social/pinterest', $store);
-      if ( Mage::getStoreConfig('rich_data/social/soundcloud', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/social/soundcloud', $store);
-      if ( Mage::getStoreConfig('rich_data/social/tumblr', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/social/tumblr', $store);
+      if ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl1', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/additionalurls/additionalurl1', $store);
+      if ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl2', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/additionalurls/additionalurl2', $store);
+      if ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl3', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/additionalurls/additionalurl3', $store);
+      if ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl4', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/additionalurls/additionalurl4', $store);
+      if ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl5', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/additionalurls/additionalurl5', $store);
+      if ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl6', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/additionalurls/additionalurl6', $store);
+      if ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl7', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/additionalurls/additionalurl7', $store);
+      if ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl8', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/additionalurls/additionalurl8', $store);
+      if ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl9', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/additionalurls/additionalurl9', $store);
+      if ( Mage::getStoreConfig('rich_data/additionalurls/additionalurl10', $store) != '' ) $medias[] = Mage::getStoreConfig('rich_data/additionalurls/additionalurl10', $store);
       return $medias;
     }
 
